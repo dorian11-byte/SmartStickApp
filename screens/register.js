@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import { Text, View, StyleSheet, Button, Alert, TouchableOpacity, TextInput } from 'react-native'
 import {NavigationContainer} from '@react-navigation/native'
-import { AntDesign } from '@expo/vector-icons';
-import { Entypo } from '@expo/vector-icons';
-import { Ionicons } from '@expo/vector-icons';
-import { MaterialIcons } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons'
+import { Entypo } from '@expo/vector-icons'
+import { Ionicons } from '@expo/vector-icons'
+import { MaterialIcons } from '@expo/vector-icons'
+import { FontAwesome } from '@expo/vector-icons'
 
 import Layout from '../components/Layout' 
 
@@ -159,7 +160,8 @@ const styles = StyleSheet.create({
       left: 220,
       fontSize: 14,
       fontWeight: 'bold',
-      color: 'blue'
+      color: 'blue',
+      textDecorationLine: 'underline',
     },
 
 });

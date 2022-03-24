@@ -18,18 +18,18 @@ export class WelcomePage extends Component {
         </Text>
         <Text style={styles.started}> Let's get started! </Text>
         <View style={styles.button1}>
-          <FontAwesome.Button name="at" backgroundColor="blue"  onPress={() => this.props.navigation.navigate('Register')}>
+          <FontAwesome.Button name="at" backgroundColor="blue"  onPress={() => this.props.navigation.navigate('Login')}>
             Continue with email
           </FontAwesome.Button>
         </View>
         <View style={styles.button2}>
-          <FontAwesome.Button name="google" backgroundColor="red"  onPress={() => this.props.navigation.navigate('Register')}>
+          <FontAwesome.Button name="google" backgroundColor="red"  onPress={() => this.props.navigation.navigate('Login')}>
             Continue with google
           </FontAwesome.Button>
         </View>
-        <Text style={styles.log}> Already have an account? </Text> 
-        <TouchableOpacity onPress={() => this.props.navigation.navigate('Login')}>
-          <Text style={styles.link}>Login</Text> 
+        <Text style={styles.log}> Don't have an account? </Text> 
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('Register')}>
+          <Text style={styles.link}>Register</Text> 
         </TouchableOpacity>
 
       </Layout>
@@ -83,7 +83,6 @@ const styles = StyleSheet.create({
       top: 487,
       width: 343,
       height: 36,
-    
     },
 
     button2:{
@@ -107,10 +106,11 @@ const styles = StyleSheet.create({
       position: 'absolute',
       top: 603,
       textAlign: 'center',
-      left: 245,
+      left: 225,
       fontSize: 16,
       fontWeight: 'bold',
-      color: 'blue'
+      color: 'blue',
+      textDecorationLine: 'underline',
     },
 });
 
