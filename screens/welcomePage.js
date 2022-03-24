@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import { Text, View, StyleSheet, Button, Alert } from 'react-native'
-import {NavigationContainer} from '@react-navigation/native'
-import { FontAwesome } from '@expo/vector-icons';
+import { Text, View, StyleSheet, Button, TouchableOpacity } from 'react-native'
+import { FontAwesome } from '@expo/vector-icons'
+
 
 import Layout from '../components/Layout' 
 
 
-export class welcomePage extends Component {
+export class WelcomePage extends Component {
   render() {
     return (
       <Layout>
@@ -18,16 +18,19 @@ export class welcomePage extends Component {
         </Text>
         <Text style={styles.started}> Let's get started! </Text>
         <View style={styles.button1}>
-          <FontAwesome.Button name="envelope" backgroundColor="#575DFB"  onPress={() => this.props.navigation.navigate('register')}>
+          <FontAwesome.Button name="at" backgroundColor="blue"  onPress={() => this.props.navigation.navigate('Register')}>
             Continue with email
           </FontAwesome.Button>
         </View>
         <View style={styles.button2}>
-          <FontAwesome.Button name="google" backgroundColor="red"  onPress={() => this.props.navigation.navigate('register')}>
+          <FontAwesome.Button name="google" backgroundColor="red"  onPress={() => this.props.navigation.navigate('Register')}>
             Continue with google
           </FontAwesome.Button>
         </View>
-        <Text style={styles.log}> Already have an account? </Text>
+        <Text style={styles.log}> Already have an account? </Text> 
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('Login')}>
+          <Text style={styles.link}>Login</Text> 
+        </TouchableOpacity>
 
       </Layout>
     )
@@ -42,24 +45,26 @@ const styles = StyleSheet.create({
       fontStyle: 'normal',
       fontWeight: 'bold',
       fontSize: 24,
-      lineHeight: 29,
+      lineHeight: 30,
+      left: 30,
     },
 
     step: {
       position: 'absolute',
       top: 284,
       color: '#575DFB',
-      left: 15,
+      left: 30,
       fontSize: 40,
-      fontWeight: 700,
+      fontWeight: '800', 
     },
 
     slogan: {
       position: 'absolute',
       top: 338,
       fontStyle: 'normal',
-      fontWeight: 400,
+      fontWeight: "400",
       fontSize: 19,
+      left: 30,
       fontFamily: 'Arial',
     },
     
@@ -67,19 +72,23 @@ const styles = StyleSheet.create({
       position: 'absolute',
       top: 431,
       fontStyle: 'normal',
+      left: 30,
       fontSize: 17.317,
       fontWeight: 'bold',
     },
 
     button1:{
       position: 'absolute',
+      left: 18,
       top: 487,
       width: 343,
-      height: 56,
+      height: 36,
+    
     },
 
     button2:{
       position: 'absolute',
+      left: 18,
       top: 542,
       width: 343,
       height: 56,
@@ -93,6 +102,16 @@ const styles = StyleSheet.create({
       fontSize: 16,
       fontWeight: 'bold',
     },
+
+    link: {
+      position: 'absolute',
+      top: 603,
+      textAlign: 'center',
+      left: 245,
+      fontSize: 16,
+      fontWeight: 'bold',
+      color: 'blue'
+    },
 });
 
-export default welcomePage
+export default WelcomePage

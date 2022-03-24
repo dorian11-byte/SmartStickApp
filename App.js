@@ -1,21 +1,20 @@
 import React from 'react'
 import { NavigationContainer} from '@react-navigation/native'
-import { createStackNavigator } from '@react-navigation/stack';
-import welcomePage from './screens/welcomePage'
-import register from './screens/register'
-import login from './screens/login'
-
+import { createStackNavigator } from '@react-navigation/stack'
+import WelcomePage from './screens/WelcomePage'
+import Register from './screens/Register'
+import Login from './screens/Login'
 
 
 const Stack = createStackNavigator()
 
-const App = () => {
+const App = () => { 
   return (
-    <NavigationContainer>
+    <NavigationContainer> 
         <Stack.Navigator screenOptions={{headerShown: false}}>
-          <Stack.Screen name="welcomePage" component={welcomePage} />
-          <Stack.Screen name="login" component={login} />
-          <Stack.Screen name="register" component={register} />
+          <Stack.Screen name="WelcomePage" component={WelcomePage} />
+          <Stack.Screen name="Login" component={Login} />
+          <Stack.Screen name="Register" component={Register} />
         </Stack.Navigator>
     </NavigationContainer>
   );

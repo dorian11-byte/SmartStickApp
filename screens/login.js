@@ -4,7 +4,7 @@ import {NavigationContainer} from '@react-navigation/native'
 
 import Layout from '../components/Layout' 
 
-export class login extends Component {
+export class Login extends Component {
   render() {
     return (
       <Layout>
@@ -14,4 +14,4 @@ export class login extends Component {
   }
 }
 
-export default login
+export default Login
