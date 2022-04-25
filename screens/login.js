@@ -8,12 +8,13 @@ import { MaterialIcons } from '@expo/vector-icons'
 
 import Layout from '../components/Layout' 
 
-export class Login extends Component {
-  render() {
-    return (
+const Login = ({navigation}) => {
+  //render() {
+    
+  return (
       <Layout>
         <View style={styles.Arrow}>
-          <TouchableOpacity onPress={() => this.props.navigation.navigate('WelcomePage')}>
+          <TouchableOpacity onPress={() => navigation.navigate('WelcomePage')}>
             <AntDesign name="arrowleft" size={38} color="black"/>
           </TouchableOpacity>
         </View>
@@ -36,12 +37,12 @@ export class Login extends Component {
         </TouchableOpacity>
 
         <Text style={styles.dont}> Don't have an account? </Text> 
-        <TouchableOpacity onPress={() => this.props.navigation.navigate('Register')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Register')}>
           <Text style={styles.link}> Register </Text> 
         </TouchableOpacity>
       </Layout>
     )
-  }
+  //}
 }
 
 const styles = StyleSheet.create({

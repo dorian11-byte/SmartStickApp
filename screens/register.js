@@ -1,20 +1,34 @@
-import React, { Component } from 'react'
-import { Text, View, StyleSheet, Button, Alert, TouchableOpacity, TextInput } from 'react-native'
+import React, { Component, useState } from 'react'
+import { Text, View, StyleSheet, Button, Alert, TouchableOpacity, TextInput, KeyboardAvoidingView } from 'react-native'
 import {NavigationContainer} from '@react-navigation/native'
 import { AntDesign } from '@expo/vector-icons'
-import { Entypo } from '@expo/vector-icons'
-import { Ionicons } from '@expo/vector-icons'
-import { MaterialIcons } from '@expo/vector-icons'
-import { FontAwesome } from '@expo/vector-icons'
+
 
 import Layout from '../components/Layout' 
 
-export class Register extends Component {
-  render() {
+const Register = ({navigation}) => {
+
+  //render() {
+
+    const [email, setEmail] = useState('')
+    const [name, setName] = useState('')
+    const [password, setPassword] = useState('')
+
+      const handleSignUp = () => {
+        app
+        .createUserWithEmailandPassword(email, password)
+        .then(userCredentials => {
+          const user = userCredentials.user;
+          console.log(user.email)
+        }).catch(error => alert(error.message))
+      }
+    
     return (
+
       <Layout>
+
         <View style={styles.Arrow}>
-          <TouchableOpacity onPress={() => this.props.navigation.navigate('WelcomePage')}>
+          <TouchableOpacity onPress={() => navigation.navigate('WelcomePage')}>
             <AntDesign name="arrowleft" size={38} color="black"/>
           </TouchableOpacity>
         </View>
@@ -22,23 +36,45 @@ export class Register extends Component {
         <Text style={styles.reg}> Register </Text>
         <Text style={styles.desc}>Create an <Text style={{color: '#575DFB', fontWeight: 'bold'}}>account </Text>to acces all the features of S.T.E.P</Text>
         <Text style={styles.email}>Email</Text>
-        <TextInput style={styles.InputMail}> <Entypo name="email" size={18} color="#575DFB"/></TextInput>
-        <Text style={styles.name}>Your Name</Text>
-        <TextInput style={styles.InputName} placeholder="Ex: Dorian Raygoza"> <Ionicons name="person-outline" size={18} color="#575DFB" /></TextInput>
-        <Text style={styles.pwd}> Your Password</Text>
-        <TextInput style={styles.InputPwd} placeholder="Ex: *********"> <MaterialIcons name="lock-outline" size={18} color="#575DFB" /></TextInput>
+        <TextInput 
+          style={styles.InputMail}
+          placeholder="abc@example.com"
+          value={ email }
+          onChangeText={text => setEmail(text) }             
 
-        <TouchableOpacity style={styles.ButtonRegister}>
+          ></TextInput>
+        <Text style={styles.name}>Your Name</Text>
+        <TextInput 
+          style={styles.InputName} 
+          placeholder="Ex: Dorian Raygoza"
+          value={ name }
+          onChangeText={text => setName(text) }       
+          
+          ></TextInput>
+        <Text style={styles.pwd}> Your Password</Text>
+        <TextInput 
+          style={styles.InputPwd} 
+          placeholder="Ex: *********"
+          value={ password }
+          onChangeText={text => setPassword(text) } 
+          //secureTextEntry 
+          ></TextInput>
+
+        <TouchableOpacity 
+          style={styles.ButtonRegister}
+          onPress = {handleSignUp}
+        >
           <Text style={styles.ButtonTxt}>Register</Text>
         </TouchableOpacity>
 
         <Text style={styles.log}> Already have an account? </Text> 
-        <TouchableOpacity onPress={() => this.props.navigation.navigate('Login')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Login')}>
           <Text style={styles.link}>Login</Text> 
         </TouchableOpacity>
+
       </Layout>
     )
-  }
+  //}
 }
 
 const styles = StyleSheet.create({

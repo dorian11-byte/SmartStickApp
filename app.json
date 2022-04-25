@@ -5,7 +5,7 @@
     "slug": "SmartStickApp",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon1.png",
+    "icon": "./assets/iconStep.png",
     "splash": {
       "image": "./assets/splash1.png",
       "resizeMode": "contain",
@@ -23,7 +23,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptative-icon1.png",
+        "foregroundImage": "./assets/adaptative-iconFisrt.png",
         "backgroundColor": "#E5E5E5"
       }
     },

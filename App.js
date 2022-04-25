@@ -4,6 +4,7 @@ import { createStackNavigator } from '@react-navigation/stack'
 import WelcomePage from './screens/WelcomePage'
 import Register from './screens/Register'
 import Login from './screens/Login'
+import { initializeApp } from 'firebase/app';
 
 
 const Stack = createStackNavigator()
